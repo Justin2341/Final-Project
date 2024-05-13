@@ -1,0 +1,8 @@
+public class ListItem
+{
+  int assignment;
+  public ListItem(int a)
+  {
+    assignment = a;
+  }
+}
