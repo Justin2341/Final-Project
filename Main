@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Assignment> list = new ArrayList<Assignment>();
+        ArrayList<Exam> examlist = new ArrayList<Exam>();
         int response;
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to the to-do list! Here are your options: ");
@@ -18,18 +19,35 @@ public class Main {
                 Assignment newassignment = new Assignment();
                 list.add(newassignment);
             }
+            if (response == 2)
+            {
+                Exam newexam = new Exam();
+                examlist.add(newexam);
+            }
             if (response == 3) {
                 for (int i = 0; i < list.size(); i++) {
                     System.out.print(list.get(i));
                 }
             }
-            System.out.println("Here are your options: ");
-            System.out.println("1. Add an assignment to the assignment list");
-            System.out.println("2. Add an exam to the exam list");
-            System.out.println("3. View your assignment list");
-            System.out.println("4. View your exam list");
-            System.out.println("5. Quit");
-            response = input.nextInt();
+            if (response == 4)
+            {
+                for (int i = 0; i < examlist.size(); i++) {
+                    System.out.print(examlist.get(i));
+                }
+            }
+            try {
+                Thread.sleep(2000);
+                System.out.println("Here are your options: ");
+                System.out.println("1. Add an assignment to the assignment list");
+                System.out.println("2. Add an exam to the exam list");
+                System.out.println("3. View your assignment list");
+                System.out.println("4. View your exam list");
+                System.out.println("5. Quit");
+                response = input.nextInt();
+            }
+            catch (InterruptedException e) {
+                System.out.println("main() Thread was interrupted while sleeping.");
+            }
         }
     }
 }
