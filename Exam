@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Exam {
+    String date;
+    String name;
+    String subject;
+
+    public Exam() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the subject of your exam: ");
+        subject = input.nextLine();
+        System.out.println("Enter the name of your exam: ");
+        name = input.nextLine();
+        System.out.println("Enter the exam date in the form mm/dd/yyyy: ");
+        date = input.nextLine();
+    }
+    public String toString()
+    {
+        return "Subject: " + subject + "\n" + "Name: " + name + "\n" + "Exam date: " + date + "\n";
+    }
+}
