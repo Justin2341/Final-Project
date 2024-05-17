@@ -1,0 +1,8 @@
+import java.util.*;
+public class sortItems implements Comparator<Assignment> {
+
+    public int compare(Assignment a, Assignment b)
+    {
+        return b.due.compareTo(a.due);
+    }
+}
