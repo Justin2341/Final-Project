@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,6 +22,7 @@ public class Main {
             {
                 Exam newexam = new Exam();
                 examlist.add(newexam);
+                Collections.sort(list, new sortItems());
             }
             if (response == 3) {
                 for (int i = 0; i < list.size(); i++) {
