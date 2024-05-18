@@ -3,6 +3,6 @@ public class sortItems implements Comparator<Assignment> {
 
     public int compare(Assignment a, Assignment b)
     {
-        return b.due.compareTo(a.due);
+        return a.due.compareTo(b.due);
     }
 }
