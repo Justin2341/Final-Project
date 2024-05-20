@@ -11,9 +11,10 @@ public class Main {
         System.out.println("2. Add an exam to the exam list");
         System.out.println("3. View your assignment list");
         System.out.println("4. View your exam list");
-        System.out.println("5. Quit");
+        System.out.println("5. Remove an assignment or exam");
+        System.out.println("6. Quit");
         response = input.nextInt();
-        while (response != 5) {
+        while (response != 6) {
             if (response == 1) {
                 Assignment newassignment = new Assignment();
                 list.add(newassignment);
@@ -35,6 +36,28 @@ public class Main {
                     System.out.print(examlist.get(i));
                 }
             }
+            if (response == 5)
+            {
+                String subject;
+                String name;
+                System.out.println("Do you want to remove an assignment or exam? Enter 'Exam' or 'Assignment'");
+                input.nextLine();
+                String s = input.nextLine();
+                if (s.equals("Assignment"))
+                {
+                    System.out.println("What is the subject of the Assignment?");
+                    subject = input.nextLine();
+                    System.out.println("What is the name of the Assignment?");
+                    name = input.nextLine();
+                    for (int i = 0; i < list.size(); i++) {
+                        if (list.get(i).getName().equals(name) && list.get(i).getSubject().equals(subject))
+                        {
+                            list.remove(i);
+                            i--;
+                        }
+                    }
+                }
+            }
             try {
                 Thread.sleep(2000);
                 System.out.println("Here are your options: ");
@@ -42,7 +65,8 @@ public class Main {
                 System.out.println("2. Add an exam to the exam list");
                 System.out.println("3. View your assignment list");
                 System.out.println("4. View your exam list");
-                System.out.println("5. Quit");
+                System.out.println("5. Remove an assignment or exam");
+                System.out.println("6. Quit");
                 response = input.nextInt();
             }
             catch (InterruptedException e) {
