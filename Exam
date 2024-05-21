@@ -14,6 +14,14 @@ public class Exam {
         System.out.println("Enter the exam date in the form mm/dd/yyyy: ");
         date = input.nextLine();
     }
+    public String getSubject()
+    {
+        return subject;
+    }
+    public String getName()
+    {
+        return name;
+    }
     public String toString()
     {
         return "Subject: " + subject + "\n" + "Name: " + name + "\n" + "Exam date: " + date + "\n";
