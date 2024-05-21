@@ -1,4 +1,6 @@
 import java.util.*;
+
+// learned from https://www.geeksforgeeks.org/java-program-to-sort-objects-in-arraylist-by-date/
 public class sortItems implements Comparator<Assignment> {
 
     public int compare(Assignment a, Assignment b)
